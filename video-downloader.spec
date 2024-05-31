@@ -1,3 +1,4 @@
+%undefine _debugsource_packages
 Name:		video-downloader
 Version:	0.12.12
 Release:	1
