@@ -8,6 +8,7 @@ URL:		https://github.com/Unrud/video-downloader
 Source0:	https://github.com/Unrud/video-downloader/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:	appstream-util
+BuildRequires:  gettext
 BuildRequires:	librsvg2
 BuildRequires:	meson
 BuildRequires:	gtk4
