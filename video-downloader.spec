@@ -1,7 +1,7 @@
 %undefine _debugsource_packages
 Name:		video-downloader
 Version:	0.12.12
-Release:	1
+Release:	2
 Summary:	Download videos from websites like YouTube and many others
 Group:		Multimedia/Internet
 License:	GPLv3+
@@ -22,6 +22,9 @@ Requires:	python-xlib
 Requires: gtk4
 Requires: hicolor-icon-theme
 Requires: %{_lib}adwaita1_0
+Requires: typelib(Adw)
+Requires: python-gobject3
+Requires: python-gi
 Requires: librsvg2
 Requires: yt-dlp
 
