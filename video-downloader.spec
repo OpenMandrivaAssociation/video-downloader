@@ -1,7 +1,7 @@
 %undefine _debugsource_packages
 Name:		video-downloader
-Version:	0.12.12
-Release:	2
+Version:	0.12.15
+Release:	1
 Summary:	Download videos from websites like YouTube and many others
 Group:		Multimedia/Internet
 License:	GPLv3+
