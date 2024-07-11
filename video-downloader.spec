@@ -1,12 +1,14 @@
 %undefine _debugsource_packages
 Name:		video-downloader
 Version:	0.12.16
-Release:	1
+Release:	2
 Summary:	Download videos from websites like YouTube and many others
 Group:		Multimedia/Internet
 License:	GPLv3+
 URL:		https://github.com/Unrud/video-downloader
 Source0:	https://github.com/Unrud/video-downloader/archive/v%{version}/%{name}-%{version}.tar.gz
+# Awaiting to merge. Adding Greek and Polish language
+Patch0:   https://patch-diff.githubusercontent.com/raw/Unrud/video-downloader/pull/285.patch
 
 BuildRequires:	appstream-util
 BuildRequires:  gettext
