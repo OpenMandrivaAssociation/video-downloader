@@ -1,6 +1,6 @@
 %undefine _debugsource_packages
 Name:		video-downloader
-Version:	0.12.19
+Version:	0.12.20
 Release:	1
 Summary:	Download videos from websites like YouTube and many others
 Group:		Multimedia/Internet
