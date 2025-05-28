@@ -13,6 +13,7 @@ BuildRequires:  gettext
 BuildRequires:	librsvg2
 BuildRequires:	meson
 BuildRequires:	gtk4
+BuildRequires:  desktop-file-utils
 BuildRequires:  pkgconfig(libadwaita-1)
 BuildRequires:	pkgconfig(python)
 BuildRequires:	pkgconfig(glib-2.0)
