@@ -1,56 +1,44 @@
-%undefine _debugsource_packages
-Name:		video-downloader
-Version:	0.12.26
-Release:	1
+%undefine	_debugsource_packages
+
 Summary:	Download videos from websites like YouTube and many others
-Group:		Multimedia/Internet
+Name:	video-downloader
+Version:	0.12.27
+Release:	1
 License:	GPLv3+
-URL:		https://github.com/Unrud/video-downloader
+Group:	Multimedia/Internet
+Url:		https://github.com/Unrud/video-downloader
 Source0:	https://github.com/Unrud/video-downloader/archive/v%{version}/%{name}-%{version}.tar.gz
 
 BuildRequires:	appstream-util
-BuildRequires:  gettext
+BuildRequires:	desktop-file-utils
+BuildRequires:	gettext
+BuildRequires:	gtk4
 BuildRequires:	librsvg2
 BuildRequires:	meson
-BuildRequires:	gtk4
-BuildRequires:  desktop-file-utils
-BuildRequires:  pkgconfig(libadwaita-1)
-BuildRequires:	pkgconfig(python)
+BuildRequires:python-flake8
 BuildRequires:	pkgconfig(glib-2.0)
 BuildRequires:	pkgconfig(gtk4)
+BuildRequires:	pkgconfig(libadwaita-1)
+BuildRequires:	pkgconfig(python)
 
+Requires:	gtk4
+Requires:	hicolor-icon-theme
+Requires:	%{_lib}adwaita1_0
+Requires:	librsvg2
+Requires:	python-gobject3
+Requires:	python-gi
 Requires:	python-xlib
-Requires: gtk4
-Requires: hicolor-icon-theme
-Requires: %{_lib}adwaita1_0
-Requires: typelib(Adw)
-Requires: python-gobject3
-Requires: python-gi
-Requires: librsvg2
-Requires: yt-dlp
+Requires:	typelib(Adw)
+Requires:	yt-dlp
 
 %description
 Download videos from websites with an easy-to-use interface. Provides the
 following features:
-
-- Convert videos to MP3
-- Supports password-protected and private videos
-- Download single videos or whole playlists
-- Automatically selects a video format based on your preferred resolution
-
+- Convert videos to MP3.
+- Supports password-protected and private videos.
+- Download single videos or whole playlists.
+- Automatically selects a video format based on your preferred resolution.
 Based on yt-dlp.
-
-%prep
-%autosetup -p1
-
-%build
-%meson
-%meson_build
-
-%install
-%meson_install
-
-%find_lang %{name}
 
 %files -f %{name}.lang
 %license COPYING
@@ -59,6 +47,25 @@ Based on yt-dlp.
 %{_datadir}/%{name}/
 %{_datadir}/applications/*.desktop
 %{_datadir}/glib-2.0/schemas/*.gschema.xml
-%{_datadir}/icons/hicolor/*/*/*.png
-%{_datadir}/icons/hicolor/*/*/*.svg
+%{_datadir}/icons/hicolor/*/apps/*.png
+%{_datadir}/icons/hicolor/*/apps/*.svg
 %{_metainfodir}/*.xml
+
+#-----------------------------------------------------------------------------
+
+%prep
+%autosetup -p1
+
+
+%build
+%meson
+%meson_build
+
+
+%install
+%meson_install
+
+# Fix weird perms (0555)
+chmod 0755 %{buildroot}%{_bindir}/%{name}
+
+%find_lang %{name}
