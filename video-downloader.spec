@@ -2,7 +2,7 @@
 
 Summary:	Download videos from websites like YouTube and many others
 Name:	video-downloader
-Version:	0.12.27
+Version:	0.12.28
 Release:	1
 License:	GPLv3+
 Group:	Multimedia/Internet
